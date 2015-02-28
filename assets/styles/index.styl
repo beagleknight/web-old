@@ -1,9 +1,15 @@
 @import "reset"
+@import "jeet"
 @import "fonts"
+@import "social"
+@import "colors"
 
-body
+html, body
   font-family: 'budalight'
   font-size: 16px
+  color: $dark-blue * 0.4
+  background: $light-blue * 1.2
+  height: 100%
 
 h1, h2, h3
   font-family: 'annie_use_your_telescopeRg'
@@ -16,3 +22,31 @@ h2
 
 p
   font-size: 1.4em
+
+.vertical
+  display: table-cell
+  text-align: center
+  vertical-align: middle
+
+.wrapper
+  height: 100%
+  .logo
+    height: 100%
+    column(1/2, gutter: 0)
+    text-align: center
+    display: table
+    img
+      width: 80%
+  .profile
+    height: 100%
+    column(1/2, gutter: 0)
+    text-align center
+    background: $dark-blue
+    height: 100%
+    display: table
+    .avatar
+      img, h1
+        margin-bottom: 5%
+      img
+        border: 0.4em solid $dark-blue * 0.4
+        border-radius: 0.8em

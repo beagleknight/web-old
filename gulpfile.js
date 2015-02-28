@@ -3,6 +3,7 @@ var gulp         = require('gulp'),
     jade         = require('gulp-jade'),
     connect      = require('gulp-connect'),
     stylus       = require('gulp-stylus'),
+    jeet         = require('jeet'),
     JADE_FILES   = ['src/views/*.jade'],
     STYLUS_FILES = ['assets/styles/*.styl'],
     PUBLIC_FILES = ['public/**/*'];
@@ -17,7 +18,9 @@ gulp.task('views', function () {
 gulp.task('styles', function () {
     gulp.src('assets/styles/index.styl')
         .pipe(plumber())
-        .pipe(stylus())
+        .pipe(stylus({
+            use: [jeet()]
+        }))
         .pipe(gulp.dest('public/css'))
 });
 
