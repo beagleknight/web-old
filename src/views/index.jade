@@ -22,3 +22,13 @@ html
                 a.soc-github(href="https://github.com/beagleknight" target="_blank")
               li
                 a.soc-linkedin.soc-icon-last(href="https://www.linkedin.com/pub/david-morcillo/25/913/b96" target="_blank")
+    script.
+      var avatarImg = document.querySelector('.avatar img');
+
+      avatarImg.addEventListener("mouseover", function () {
+        avatarImg.src = "/images/profile_david_macarra.jpg";
+      });
+
+      avatarImg.addEventListener("mouseleave", function () {
+        avatarImg.src = "/images/profile_david.jpg";
+      });
