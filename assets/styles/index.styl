@@ -50,3 +50,22 @@ p
       img
         border: 0.4em solid $dark-blue * 0.4
         border-radius: 0.8em
+
+@media (orientation: portrait)
+  .wrapper
+    .logo
+      column(1, gutter: 0)
+    .profile
+      height: 100%
+      column(1, gutter: 0)
+
+@media (min-width: 320px) and (max-width: 720px)
+  body, html
+    font-size: 10px
+  .soc
+    li
+      a
+        width 40px
+        height 40px
+        font-size 22px
+        line-height 40px
