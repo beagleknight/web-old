@@ -1,37 +1,32 @@
-doctype html
-html
-  head
-    title Beagleknight - Home
-    link(rel="stylesheet" href="/css/index.css")
-    meta(charset="UTF-8")
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-  body
-    .wrapper
-      .logo
-        .vertical
-          img(src="/images/mario_block.png")
-      .profile
-        .vertical
-          .avatar
-            img(src="/images/profile_david.jpg")
-            h1 David Morcillo Muñoz
-          .social
-            ul.soc
-              li
-                a.soc-twitter(href="https://www.twitter.com/beagleknight" target="_blank")
-              li
-                a.soc-linkedin(href="https://www.linkedin.com/pub/david-morcillo/25/913/b96" target="_blank")
-              li
-                a.soc-github(href="https://github.com/beagleknight" target="_blank")
-              li
-                a.sketchfab(href="https://sketchfab.com/beagleknight" target="_blank")
-    script.
-      var avatarImg = document.querySelector('.avatar img');
+extends layout
 
-      avatarImg.addEventListener("mouseover", function () {
-        avatarImg.src = "/images/profile_david_macarra.jpg";
-      });
+block content
+  .logo
+    .vertical
+      img(src="/images/mario_block.png")
+  .profile
+    .vertical
+      .avatar
+        img(src="/images/profile_david.jpg")
+        h1 David Morcillo Muñoz
+      .social
+        ul.soc
+          li
+            a.soc-twitter(href="https://www.twitter.com/beagleknight" target="_blank")
+          li
+            a.soc-linkedin(href="https://www.linkedin.com/pub/david-morcillo/25/913/b96" target="_blank")
+          li
+            a.soc-github(href="https://github.com/beagleknight" target="_blank")
+          li
+            a.sketchfab(href="https://sketchfab.com/beagleknight" target="_blank")
 
-      avatarImg.addEventListener("mouseleave", function () {
-        avatarImg.src = "/images/profile_david.jpg";
-      });
+  script.
+    var avatarImg = document.querySelector('.avatar img');
+
+    avatarImg.addEventListener("mouseover", function () {
+      avatarImg.src = "/images/profile_david_macarra.jpg";
+    });
+
+    avatarImg.addEventListener("mouseleave", function () {
+      avatarImg.src = "/images/profile_david.jpg";
+    });
