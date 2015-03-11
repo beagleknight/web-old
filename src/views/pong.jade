@@ -1,43 +1,6 @@
 extends layout
 
 block content
-  h1 Game
-
+  h1 Pong
   canvas
-
-  script.
-    var canvas = document.querySelector('canvas'),
-        ctx    = canvas.getContext("2d"),
-        ball   = {
-            position: { x: 0, y: 0 },
-            velocity: { x: 10, y: 10 }
-        };
-
-    canvas.width = 800;
-    canvas.height = 600;
-
-    function update () {
-        ball.position.x += ball.velocity.x;
-        ball.position.y += ball.velocity.y;
-
-        if (ball.position.y + 50 >= 600 || ball.position.y < 0) {
-          ball.velocity.y *= -1;
-        }
-
-        if (ball.position.x + 50 >= 800 || ball.position.x < 0) {
-          ball.velocity.x *= -1;
-        }
-    }
-
-    function render () {
-        ctx.clearRect(0, 0, 800, 600);
-        ctx.fillRect(ball.position.x, ball.position.y, 50, 50, "#000");
-    }
-
-    function loop () {
-      update();
-      render();
-      window.requestAnimationFrame(loop);
-    }
-
-    loop();
+  script(src="/js/pong.js")

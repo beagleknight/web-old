@@ -6,6 +6,7 @@ var gulp         = require('gulp'),
     jeet         = require('jeet'),
     JADE_FILES   = ['src/views/*.jade'],
     STYLUS_FILES = ['assets/styles/*.styl'],
+    JS_FILES     = ['assets/scripts/*.js'],
     PUBLIC_FILES = ['public/**/*'];
 
 gulp.task('views', function () {
@@ -24,10 +25,17 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('public/css'))
 });
 
+gulp.task('scripts', function () {
+    gulp.src(JS_FILES)
+        .pipe(plumber())
+        .pipe(gulp.dest('public/js'))
+});
+
 gulp.task('watch', function () {
-    gulp.watch(JADE_FILES, ['views']);
-    gulp.watch(STYLUS_FILES, ['styles']);
-    gulp.watch(PUBLIC_FILES, ['reload']);
+    gulp.watch(JADE_FILES   , ['views']);
+    gulp.watch(STYLUS_FILES , ['styles']);
+    gulp.watch(JS_FILES     , ['scripts']);
+    gulp.watch(PUBLIC_FILES , ['reload']);
 });
 
 gulp.task('connect', function() {
@@ -42,6 +50,5 @@ gulp.task('reload', function () {
         .pipe(connect.reload());
 });
 
-gulp.task('build', ['views', 'styles']);
-
+gulp.task('build', ['views', 'styles', 'scripts']);
 gulp.task('default', ['build', 'watch', 'connect']);
