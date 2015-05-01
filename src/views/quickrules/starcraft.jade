@@ -1,0 +1,66 @@
+#starcraft
+  h1 Starcraft
+  h2 Preparación
+  ul
+    li Elegir el jugador iniciar al azar.
+    li Escoger facciones y reunir todos los componentes.
+    li Situar el contador de puntos de conquista a 0.
+    li Preparar el mazo de evento (III, II y I). Se retiran cartas de etapa I y II: 5j = 5, 4j = 10, 3j = 15, 2j = 20.
+    li Preparar la galaxia: cada jugador recibe 2 planetas, el jugador inicial coloca el primero y luego mediante las agujas del reloj. El último jugador coloca su segundo planeta y se hace de nuevo en orden inverso hasta llegar al jugador inicial. Se puede colocar base en el primero o en el segundo planeta. Cada jugador coloca una ruta de navegación de eje Z. Se reparten cartas de recurso. Se coloca el ejército inicial.
+    li Separar cartas de combate y tecnología.
+    li Cada jugador roba 6 cartas del mazo de combate (los Terran 8).
+  h2 La ronda de juego
+  h3 Fase de planificación
+  ul
+    li Cada jugador asigna 4 fichas de Orden a los planetas del tablero, empezando por el jugador inicial.
+    li La orden se coloca en un planeta donde haya una unidad o base aliada o en un planete adyacente a ésta.
+    li Se colocan las ordenes encima de ordenes ya existentes formando la pila de ordenes.
+  h3 Fase de ejecución
+  ul
+    li Se resuelven ordenes empezando por el jugador inicial y siguiendo las agujas del reloj.
+    li Se elige una orden visible y se resuelve.
+    li En lugar de resolver la orden se puede robar una carta de evento y se coloca en la zona del jugador sin mirarla.
+    li Si un jugador tiene todas sus ordenes bloqueadas (debajo de fichas de enemigos) debe robar una carta de evento.
+  h3 Fase de reagrupación
+  ul
+    li Destruir bases si en la misma zona hay unidades enemigas. Se destruyen transportes si no hay bases en planetas adyacentes.
+    li Si se pierde la base se pierden todas las cartas de recurso del mismo. Se pierde la carta de una zona si en ella hay unidad o base enemiga. Los obreros que haya en la carta de recurso son destruidos.
+    li Se reciben cartas de recurso en el caso de tener una base en el planeta siguiendo las normas anteriores.
+    li Se recuperan los obreros de las cartas de recurso y vuelven a la zona de obreros disponible.
+    li Se reciben los puntos de conquista si hay unidades en una zona del planeta que otorgue puntos.
+    li Comprobar victoria normal (15 puntos de conquista o más)
+    li Comprobar victoria especial
+    li Cada jugador puede jugar una carta de evento empezando por el jugador inicial. Los jugadores que hayan robado "El fin está próximo" deben jugarla obligatoriamente y se deja al lado del tablero. Si hay dos cartas o más de éste tipo, la partida termina.
+    li Se descartan cartas de combate hasta el límite de la mano de 6 (los Terran 8).
+    li Se pasa la ficha de jugador inicial al jugador de la izquierda.
+  h2 Ganar la partida
+  ul
+    li Victoria normal: 15 puntos de conquista. Desempate en recursos, zonas, bases y obreros.
+    li Victoria especial: depende de cada raza
+    li Victoria por fin de partida: si hay dos cartas de "el fin está proximo". Gana el que tenga más puntos de victoria y se hace el desempate igual que en la victoria normal.
+    li Victoria por eliminación: ser el último jugador en pie.
+  h2 Recursos
+  ul
+    li Los obreros explotan los recursos. Cada carta de recurso tiene un límite de obreros.
+    li Cada facción tiene recursos permanentes en su hoja de facción y pueden ser explotados de la forma habitual.
+    li Sobreexplotación: asignar un obrero más de lo permitido en la carta de recurso. El recurso pasa a estar agotado. Si se sobreexplota un recurso agotado éste desaparece.
+  h2 Ordenes
+  h3 Orden de construcción
+  ul
+    li Se puede construir en orden: obreros, transportes y unidades en el caso de disponer de una base, 1 edificio y/o 1 módulo si tiene base o unidad en el planeta y construir base en el caso de disponer de unidades en el planeta.
+    li Puede haber un máximo de 1 transporte por facción en una ruta de navegación.
+    li El límite a la construcción de unidades es de 2 inicialmente. Se pueden colocar en cualquier zona aliada o desocupada del planeta respetando el límite de unidades por zona planetaria.
+    li Las bases se construyen en zonas donde haya al menos una unidad aliada y máximo 1 base por planeta. No se puede construir base en una zona donde haya una base enemiga.
+    li Las mejoras de las bases afectan a todas las bases del jugador y cualquier base nueva que incorpore.
+  h3 Orden de movilización
+  ul
+    li Se puede desplazar cualquier número de unidades de una o varias zonas a una zona del planeta activo, ya sea des de el planeta mismo o un planeta adyacente.
+    li Si se llevan unidades a una zona enemiga tiene lugar una batalla. El número de unidades que puedes llevar a una zona enemiga es igual al límite de esa zona más 2. Sólo se puede iniciar una batalla por orden de movilización.
+    li Solo se pueden mover unidades de un planeta a otro si se dispone de un transporte en la zona de navegación.
+  h3 Orden de investigación
+  ul
+    li Para ejectuar una orden de investigación se debe tener una base en el planeta activo.
+    li Se roba una carta de evento y se coloca bajo la hoja de facción sin mirar.
+    li Opcionalmente se pueden robar 3 cartas de combate y adquirir 1 tecnología. Si se adquiere tecnología y se añade al mazo de combate éste se debe mezclar. Cuando se compra una tecnología se añaden todas las cópias de esa carta.
+  h2 Combate
+    
