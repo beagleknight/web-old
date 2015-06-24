@@ -1,12 +1,15 @@
-extends layout
-
-block content
-  ul
-    li
-      a(href="#dust") Dust
-    li
-      a(href="#starcraft") Starcraft
-        
-  .rules
-    include quickrules/dust
-    include quickrules/starcraft
+doctype html
+html
+  head
+    title Beagleknight - Quickrules
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+  body
+    .wrapper
+      ul
+        li
+          a(href="/quickrules/dust.html") Dust
+        li
+          a(href="/quickrules/starcraft.html") Starcraft
+        li
+          a(href="/quickrules/sde_forgotten_king.html") SDE: Forgotten King
