@@ -28,7 +28,7 @@ block content
   ul
     li Activar mini, resolver power-up y le toca al consul.
     li Se deben activar todos los héroes antes de activar el mismo otra vez.
-    li Cada vez que un héroe entra en una celda sin explorar se detiene el movimiento y roba una carta de exploración. Se aplican los efectos inmediatamente. No se roba en la celda inicial.
+    li Cada vez que un héroe entra en una celda sin explorar se detiene el movimiento y roba una carta de exploración. Se aplican los efectos inmediatamente en la celda correspondiente. No se roba en la celda inicial.
     li Mochila: los héroes guardan los objetos que pueda usar toda la party.
     li Monedas princesa: cuando se destruye un punto de spawn aparece 1 moneda en su lugar. Los héroes pueden recogerla usando la acción de saquear.
     li Llaves de mazmorra: cuando se destruye un Mini Boss se aparece 1 llave en su lugar. Los héroes pueden recogerla usando la acción de saquear. Las llaves sirven para abrir tesoros.
@@ -37,11 +37,11 @@ block content
   h3 Turno del consul
   ul
     li Debe escoger entre activar monstruos o invocar monstruos. A continuación realiza la fase de power-up y le vuelve a tocar a los héroes.
-    li Activar monstruos: puede activar uno o varios monstruos por valor de 4 calaveras. Además puede activar un monstruo de nivel Super gratuitamente que no haya sido activado en ese mismo turno.
+    li Activar monstruos: puede activar uno o varios monstruos por valor de 4 calaveras. Además puede activar un monstruo de nivel Super gratuitamente que no haya sido activado en ese mismo turno. No se puede activar un monstruo múltiples veces en el mismo turno.
     li Invocar monstruos: escoge un punto de spawn e invoca a todos los monstruos que esten disponibles hasta dos casillas adyacentes al punto. Añade un contador de herida al punto de invocación (uno a cada punto si era un paired spawn point). No se puede invocar monstruos si ya lo hizo en el turno anterior.
   h3 Power-up
   ol
-    li Equipo: los héroes roban 1 carta del mazo de loot por cada monstruo élite o minion destruido durante su turno. Máximo 3 cartas. Los héroes roban 1 carta del mazo de tesoro por cada Mini Boss o Boo Booty destruido. No robaran cartas del mazo de loot de monstruos destruidos durante el turno del consul ni de monstruos insignificantes. Cualquier héroe puede ser equipado durante el power-up. El equipo que no se haya equipado durante esta fase es descartado. Por cada carta de tesoro descartada un héroe se puede curar un corazón o efecto de estado aunque ya estuviera equipada antes. Cuando un héroe se cambia el equipo de un slot éste se descarta y no puede ser equipado por otros héroes.
+    li Equipo: los héroes roban 1 carta del mazo de loot por cada monstruo élite o minion destruido durante su turno. Máximo 3 cartas. Los héroes roban 1 carta del mazo de tesoro por cada Mini Boss o Boo Booty destruido. No robaran cartas del mazo de loot de monstruos destruidos durante el turno del consul ni de monstruos insignificantes. Cualquier héroe puede ser equipado durante el power-up. IMPORTANTE: Un hérore solo puede llevar 1 carta de tesoro equipada a la vez. El equipo que no se haya equipado durante esta fase es descartado. Por cada carta de tesoro descartada un héroe se puede curar un corazón o efecto de estado aunque ya estuviera equipada antes. Cuando un héroe se cambia el equipo de un slot éste se descarta y no puede ser equipado por otros héroes.
     li Maravillas: cada maravilla tiene sus propias reglas de funcionamiento.
     li Mighty monsters: si un mini boss ha sido destruido se avanza en la tabla de mighty monsters. Solo los monstruos élite y minions ganan estos beneficios: 1 - defensa + 1, 2 - ataque + 1, 3 - defensa + 1, 4 - ataque + 1, 5 - todos los monstruos inflingen un efecto de estado elegido por el consul al atacar
     li Boss spawn: El consul puede colocar un mini-boss por cada punto de spawn que fué destruido durante el turno. Coloca el mini-boss en cualquier lugar de la celda dónde fue destruido el punto. Si no hay mini-bosses disponibles se avanza el mighty-monster chart. Si el punto de spawn destruido fué el último de la mazmorra aparece el Boss en lugar del mini-boss.
@@ -104,7 +104,7 @@ block content
         li Hookshot: no requiere línea de visión
         li Immune status effects (admiración con cruz roja): no le afecta ningun efecto de estado. Si tiene un contador de efecto y gana immunidad, retira el contador.
         li Immune x (cruz roja): Immune a un efecto de estado concreto. Si tiene un contador de ese efecto y gana immunidad, retira el contador.
-        li Insignificant: si se encuentra en la misma celda que un héroe, puede ser activado gratuitamente.
+        li Insignificant: si se encuentra en la misma celda que un héroe, puede ser activado gratuitamente. NO se coge loot por matar a este tipo de monstruos.
         li One use only: sólo se puede usar una vez por partida.
         li Pet X: es el pet master de ese X y no puede ser master de otro pet. El pet empieza a 2 casillas del master.
         li Shapeshift X: es un cambiaformas de X
@@ -123,10 +123,28 @@ block content
         li Surefoot: terreno dificil como espacios abiertos. Ignora efectos negativos en esas casillas
         li Tough: Durante el mantenimiento puede eliminar un contador de herida
     li Afinidad: tiene diferentes efectos positivos o negativos en el juego. Por ejemplo, algunas piezas de equipo dan otros efectos en vez de los habitaules.
+    li 
+      span Efectos de área
+      ul
+        li Se hace UNA tirada ofensiva y cada mini afectada hace su tirada de defensa.
+        li Burst X: afecta a objetivo y X casillas adyacentes.
+        li Cross X: sale de la mini X casillas en horizontal y vertical (sin diagonales)
+        li Lance X: En línea recta X casillas (sin diagonales)
+        li Sweep X: Delante la mini y adyacentes, en línea recta X casillas
+        li Wave X: centrado en la mini y a X casillas adyacentes
+        li Aura X: igual que wave X pero permanecen en juego hasta la activación de esa mini.
+    li Boo booty: Solo aparecen al abrir un cofre.
+    li
+      span Efectos de control
+      ul
+        li Compel X: el objetivo se puede mover X casillas en cualquier dirección.
+        li Pull X: el objetivo se mueve hasta la mini X casillas.
+        li PUsh X: el objetivo se mueve desde la mini X casillas y no hace falta que sea en linea recta
+    li Creeps: salen si aparece su símbolo en la carta de exploración. Aparecen a dos casillas del punto de spawn.
     li
       span Efectos de celda
       ul
         li Chasm (grieta): no se puede mover a través de ellos pero si trazar línea de visión.
         li Terreno dificil (botas): se necesitan 2 puntos de movimiento para entrar en una casilla
         li Estructura (casa): no se puede mover ni trazar visión
-        li Trampas: cada trampa tiene su plantilla. El consul la pone como quiere.
+        li Trampas: cada trampa tiene su plantilla. El consul la pone como quiere. Solo pueden ser activadas 1 vez en la misma mini en el mismo turno. Las trampas solo desaparecen si son desarmadas por los héroes.
