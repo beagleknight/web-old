@@ -13,7 +13,7 @@ gulp.task('views', function () {
     gulp.src(JADE_FILES)
         .pipe(plumber())
         .pipe(jade())
-        .pipe(gulp.dest('public'))
+        .pipe(gulp.dest('public'));
 });
 
 gulp.task('styles', function () {
@@ -22,13 +22,13 @@ gulp.task('styles', function () {
         .pipe(stylus({
             use: [jeet()]
         }))
-        .pipe(gulp.dest('public/css'))
+        .pipe(gulp.dest('public/css'));
 });
 
 gulp.task('scripts', function () {
     gulp.src(JS_FILES)
         .pipe(plumber())
-        .pipe(gulp.dest('public/js'))
+        .pipe(gulp.dest('public/js'));
 });
 
 gulp.task('watch', function () {
